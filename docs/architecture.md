@@ -34,4 +34,4 @@
 - The CLI and web UI are first-class entry points for local development.
 - Channel SDKs are optional dependencies. The core package stays usable without them.
 - Workspace templates are packaged with the library so onboarding does not depend on private local files.
-- The mock provider exists to keep demos and smoke checks runnable without API keys.
+- The mock provider exists to keep demos runnable without API keys.

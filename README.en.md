@@ -74,7 +74,7 @@ These integrations are part of the public project, but they require platform cre
 ```text
 coresearcher/              Core package
 providers/            Provider compatibility layer reused by coresearcher
-demos/                Runnable demos and smoke checks
+demos/                Runnable demos
 eval/datasets/        Public evaluation datasets
 config.example.json   Minimal configuration template
 ```
@@ -92,4 +92,4 @@ config.example.json   Minimal configuration template
 
 ## Contributing
 
-See `CONTRIBUTING.md` for setup and smoke checks.
+See `CONTRIBUTING.md` for setup notes.

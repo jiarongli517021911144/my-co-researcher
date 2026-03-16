@@ -9,7 +9,7 @@ This package is the public provider abstraction used by the runtime.
 - `factory.py`
   Provider factory from config
 - `mock_provider.py`
-  Offline provider for demos and smoke checks
+  Offline provider for demos
 - `litellm_provider.py`
   Main adapter for hosted model providers
 - `custom_provider.py`

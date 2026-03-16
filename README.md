@@ -74,7 +74,7 @@ python -m coresearcher status
 ```text
 coresearcher/              核心包
 providers/            被 coresearcher 复用的 provider 兼容层
-demos/                可直接运行的 demo 和 smoke check
+demos/                可直接运行的 demo
 eval/datasets/        对外公开的评测数据集
 config.example.json   最小配置模板
 ```
