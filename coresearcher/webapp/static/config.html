@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>coresearcher · 配置与定时任务</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="theme-editorial page-config">
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="brand">
+        <div class="brand-mark">c</div>
+        <div class="brand-copy">
+          <div class="brand-kicker">Editorial Research Desk</div>
+          <h1>coresearcher</h1>
+          <p>研究员工作台 · 多页观察界面</p>
+        </div>
+      </div>
+      <div class="nav-section-title">模块导航</div>
+      <nav class="nav-list">
+        <a class="nav-link" href="/" data-nav="dashboard"><span class="nav-icon">✨</span><span>概览</span></a>
+<a class="nav-link" href="/chat" data-nav="chat"><span class="nav-icon">💬</span><span>对话</span></a>
+<a class="nav-link" href="/workspace" data-nav="workspace"><span class="nav-icon">🗂️</span><span>工作区</span></a>
+<a class="nav-link" href="/sessions" data-nav="sessions"><span class="nav-icon">🧵</span><span>会话</span></a>
+<a class="nav-link" href="/memory" data-nav="memory"><span class="nav-icon">🧠</span><span>记忆</span></a>
+<a class="nav-link is-active" href="/config" data-nav="config"><span class="nav-icon">⚙️</span><span>配置</span></a>
+      </nav>
+      <div class="nav-section-title">当前环境</div>
+      <div class="sidebar-meta">
+        <div><strong>Workspace</strong></div>
+        <div data-shell-workspace>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Memory</strong></div>
+        <div data-shell-memory>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Provider</strong></div>
+        <div data-shell-provider>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Channels</strong></div>
+        <div data-shell-channels>loading...</div>
+      </div>
+    </aside>
+    <main class="app-main">
+      <header class="page-header">
+        <div class="page-title">
+          <div class="page-eyebrow">SYSTEM CONTROL</div>
+          <h2>配置与定时任务</h2>
+          <p>把配置摘要、cron 列表和原始 JSON 编辑器分开，让系统信息阅读和配置编辑互不干扰。</p>
+        </div>
+        <div class="page-actions">
+          <span class="page-stamp">Field Notes</span>
+          <a class="badge info" href="/">概览</a>
+        </div>
+      </header>
+      <section class="page-grid config-grid">
+  <aside class="stack">
+    <article class="card">
+      <div class="card-top"><h3>配置摘要</h3><span class="badge info">Config</span></div>
+      <div class="kv-grid" id="configSummary"></div>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>Cron 任务</h3><span class="badge">Jobs</span></div>
+      <div class="list" id="cronJobList"></div>
+    </article>
+  </aside>
+
+  <section class="pane">
+    <div class="pane-header">
+      <div>
+        <h3>原始配置编辑器</h3>
+        <div class="muted">直接编辑 `~/.coresearcher/config.json`，保存前会走后端校验。</div>
+      </div>
+      <div class="toolbar">
+        <button class="secondary" id="reloadConfigBtn">重新加载</button>
+        <button id="saveConfigBtn">保存配置</button>
+      </div>
+    </div>
+    <div class="pane-body stack">
+      <div class="status-line" id="configStatus"></div>
+      <textarea id="configEditor" class="editor" spellcheck="false"></textarea>
+    </div>
+  </section>
+</section>
+    </main>
+  </div>
+  <script type="module" src="/static/config.js"></script>
+</body>
+</html>

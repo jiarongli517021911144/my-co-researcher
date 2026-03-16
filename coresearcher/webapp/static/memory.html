@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>coresearcher · 记忆检索</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="theme-editorial page-memory">
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="brand">
+        <div class="brand-mark">c</div>
+        <div class="brand-copy">
+          <div class="brand-kicker">Editorial Research Desk</div>
+          <h1>coresearcher</h1>
+          <p>研究员工作台 · 多页观察界面</p>
+        </div>
+      </div>
+      <div class="nav-section-title">模块导航</div>
+      <nav class="nav-list">
+        <a class="nav-link" href="/" data-nav="dashboard"><span class="nav-icon">✨</span><span>概览</span></a>
+<a class="nav-link" href="/chat" data-nav="chat"><span class="nav-icon">💬</span><span>对话</span></a>
+<a class="nav-link" href="/workspace" data-nav="workspace"><span class="nav-icon">🗂️</span><span>工作区</span></a>
+<a class="nav-link" href="/sessions" data-nav="sessions"><span class="nav-icon">🧵</span><span>会话</span></a>
+<a class="nav-link is-active" href="/memory" data-nav="memory"><span class="nav-icon">🧠</span><span>记忆</span></a>
+<a class="nav-link" href="/config" data-nav="config"><span class="nav-icon">⚙️</span><span>配置</span></a>
+      </nav>
+      <div class="nav-section-title">当前环境</div>
+      <div class="sidebar-meta">
+        <div><strong>Workspace</strong></div>
+        <div data-shell-workspace>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Memory</strong></div>
+        <div data-shell-memory>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Provider</strong></div>
+        <div data-shell-provider>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Channels</strong></div>
+        <div data-shell-channels>loading...</div>
+      </div>
+    </aside>
+    <main class="app-main">
+      <header class="page-header">
+        <div class="page-title">
+          <div class="page-eyebrow">MEMORY INDEX</div>
+          <h2>记忆检索</h2>
+          <p>把语义检索结果、长期记忆和最近按天记忆拆成独立区域，阅读更舒服，也更容易对比。</p>
+        </div>
+        <div class="page-actions">
+          <span class="page-stamp">Field Notes</span>
+          <a class="badge info" href="/">概览</a>
+        </div>
+      </header>
+      <section class="stack">
+  <article class="card">
+    <div class="card-top">
+      <div>
+        <h3>语义搜索</h3>
+        <div class="card-subtitle">输入问题或关键词，直接查看 Chroma 向量检索结果。</div>
+      </div>
+      <span class="badge info">Memory Search</span>
+    </div>
+    <div class="search-row">
+      <input id="memoryQueryInput" placeholder="例如：程序员、调研框架、喝水提醒" />
+      <button id="memorySearchBtn">搜索</button>
+    </div>
+    <div class="status-line" id="memoryStatus"></div>
+    <div class="stack" id="memorySearchResults"></div>
+  </article>
+
+  <section class="page-grid memory-grid">
+    <div class="stack" id="recentMemoryList"></div>
+    <aside class="pane">
+      <div class="pane-header">
+        <div>
+          <h3>长期记忆</h3>
+          <div class="muted">读取 `workspace/MEMORY.md` 的当前内容。</div>
+        </div>
+      </div>
+      <div class="pane-body stack">
+        <div class="status-line" id="longTermStatus"></div>
+        <div class="content-block" id="longTermMemory"></div>
+      </div>
+    </aside>
+  </section>
+</section>
+    </main>
+  </div>
+  <script type="module" src="/static/memory.js"></script>
+</body>
+</html>

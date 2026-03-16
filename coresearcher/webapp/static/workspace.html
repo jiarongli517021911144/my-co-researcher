@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>coresearcher · 工作区文件</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="theme-editorial page-workspace">
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="brand">
+        <div class="brand-mark">c</div>
+        <div class="brand-copy">
+          <div class="brand-kicker">Editorial Research Desk</div>
+          <h1>coresearcher</h1>
+          <p>研究员工作台 · 多页观察界面</p>
+        </div>
+      </div>
+      <div class="nav-section-title">模块导航</div>
+      <nav class="nav-list">
+        <a class="nav-link" href="/" data-nav="dashboard"><span class="nav-icon">✨</span><span>概览</span></a>
+<a class="nav-link" href="/chat" data-nav="chat"><span class="nav-icon">💬</span><span>对话</span></a>
+<a class="nav-link is-active" href="/workspace" data-nav="workspace"><span class="nav-icon">🗂️</span><span>工作区</span></a>
+<a class="nav-link" href="/sessions" data-nav="sessions"><span class="nav-icon">🧵</span><span>会话</span></a>
+<a class="nav-link" href="/memory" data-nav="memory"><span class="nav-icon">🧠</span><span>记忆</span></a>
+<a class="nav-link" href="/config" data-nav="config"><span class="nav-icon">⚙️</span><span>配置</span></a>
+      </nav>
+      <div class="nav-section-title">当前环境</div>
+      <div class="sidebar-meta">
+        <div><strong>Workspace</strong></div>
+        <div data-shell-workspace>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Memory</strong></div>
+        <div data-shell-memory>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Provider</strong></div>
+        <div data-shell-provider>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Channels</strong></div>
+        <div data-shell-channels>loading...</div>
+      </div>
+    </aside>
+    <main class="app-main">
+      <header class="page-header">
+        <div class="page-title">
+          <div class="page-eyebrow">WORKSPACE ARCHIVE</div>
+          <h2>工作区文件</h2>
+          <p>把文件浏览、筛选和编辑器拆开，减少单页堆叠感；支持按路径打开或直接创建新文件。</p>
+        </div>
+        <div class="page-actions">
+          <span class="page-stamp">Field Notes</span>
+          <a class="badge info" href="/">概览</a>
+        </div>
+      </header>
+      <section class="page-grid workspace-grid">
+  <aside class="pane">
+    <div class="pane-header">
+      <div>
+        <h3>文件列表</h3>
+        <div class="muted">来自当前 workspace 根目录。</div>
+      </div>
+      <button class="secondary" id="refreshFilesBtn">刷新</button>
+    </div>
+    <div class="pane-body stack">
+      <input id="fileFilterInput" placeholder="按文件名或路径筛选" />
+      <div class="toolbar">
+        <input id="pathInput" placeholder="输入相对路径，例如 notes/today.md" />
+        <button class="secondary" id="openPathBtn">打开</button>
+      </div>
+      <div class="file-list list" id="fileList"></div>
+    </div>
+  </aside>
+
+  <section class="pane">
+    <div class="pane-header">
+      <div>
+        <h3 id="editorTitle">文件编辑器</h3>
+        <div class="muted" id="editorMeta">选择左侧文件开始查看或编辑。</div>
+      </div>
+      <div class="toolbar">
+        <button class="secondary" id="reloadFileBtn">重新加载</button>
+        <button id="saveFileBtn">保存文件</button>
+      </div>
+    </div>
+    <div class="pane-body stack">
+      <div class="status-line" id="workspaceStatus"></div>
+      <textarea id="fileEditor" class="editor" spellcheck="false" placeholder="文件内容会显示在这里。"></textarea>
+    </div>
+  </section>
+</section>
+    </main>
+  </div>
+  <script type="module" src="/static/workspace.js"></script>
+</body>
+</html>

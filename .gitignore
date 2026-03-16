@@ -1,0 +1,35 @@
+.DS_Store
+.venv/
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+*.pyc
+__pycache__/
+
+# Local configuration and demo artifacts
+.demo/
+demos/
+.env
+.env.*
+
+# Internal notes that should not be published
+SPEC.md
+workspace/
+
+# Runtime state and logs
+runtime/
+botpy.log
+botpy.log.*
+eval_report_*.md
+
+# Generated evaluation outputs
+eval/reports/
+eval/runtime/
+eval/runtime_dynamic_only/
+
+# Local vector or session state
+*.jsonl

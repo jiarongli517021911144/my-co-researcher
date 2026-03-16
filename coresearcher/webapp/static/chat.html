@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>coresearcher · 对话与实时轨迹</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="theme-editorial page-chat">
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="brand">
+        <div class="brand-mark">c</div>
+        <div class="brand-copy">
+          <div class="brand-kicker">Editorial Research Desk</div>
+          <h1>coresearcher</h1>
+          <p>研究员工作台 · 多页观察界面</p>
+        </div>
+      </div>
+      <div class="nav-section-title">模块导航</div>
+      <nav class="nav-list">
+        <a class="nav-link" href="/" data-nav="dashboard"><span class="nav-icon">✨</span><span>概览</span></a>
+<a class="nav-link is-active" href="/chat" data-nav="chat"><span class="nav-icon">💬</span><span>对话</span></a>
+<a class="nav-link" href="/workspace" data-nav="workspace"><span class="nav-icon">🗂️</span><span>工作区</span></a>
+<a class="nav-link" href="/sessions" data-nav="sessions"><span class="nav-icon">🧵</span><span>会话</span></a>
+<a class="nav-link" href="/memory" data-nav="memory"><span class="nav-icon">🧠</span><span>记忆</span></a>
+<a class="nav-link" href="/config" data-nav="config"><span class="nav-icon">⚙️</span><span>配置</span></a>
+      </nav>
+      <div class="nav-section-title">当前环境</div>
+      <div class="sidebar-meta">
+        <div><strong>Workspace</strong></div>
+        <div data-shell-workspace>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Memory</strong></div>
+        <div data-shell-memory>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Provider</strong></div>
+        <div data-shell-provider>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Channels</strong></div>
+        <div data-shell-channels>loading...</div>
+      </div>
+    </aside>
+    <main class="app-main">
+      <header class="page-header">
+        <div class="page-title">
+          <div class="page-eyebrow">LIVE OPERATIONS</div>
+          <h2>对话与实时轨迹</h2>
+          <p>把会话选择、消息时间线和 Agent trace 分成三栏，适合一边聊天一边观察工具调用与计划事件。</p>
+        </div>
+        <div class="page-actions">
+          <span class="page-stamp">Field Notes</span>
+          <a class="badge info" href="/">概览</a>
+        </div>
+      </header>
+      <section class="page-grid chat-grid">
+  <aside class="pane">
+    <div class="pane-header">
+      <h3>会话列表</h3>
+      <button class="secondary" id="newSessionBtn">新会话</button>
+    </div>
+    <div class="pane-body stack">
+      <input id="sessionSearch" placeholder="筛选 session id" />
+      <div class="list" id="sessionList"></div>
+    </div>
+  </aside>
+
+  <section class="pane">
+    <div class="pane-header">
+      <div>
+        <h3>聊天窗口</h3>
+        <div class="muted">当前 session 会保存在本地浏览器与 session JSONL 中。</div>
+      </div>
+      <span class="badge info" id="currentSessionBadge">session</span>
+    </div>
+    <div class="pane-body stack">
+      <div class="toolbar">
+        <input id="sessionIdInput" placeholder="输入或修改 session id" />
+        <button class="secondary" id="loadSessionBtn">加载</button>
+      </div>
+      <div class="timeline" id="chatHistory"></div>
+      <div class="stack">
+        <textarea id="chatInput" class="editor" placeholder="输入消息、任务或研究需求；支持 Ctrl/Cmd + Enter 发送。"></textarea>
+        <div class="toolbar spread">
+          <div class="status-line" id="chatStatus"></div>
+          <div class="toolbar">
+            <button class="secondary" id="refreshChatBtn">刷新会话</button>
+            <button id="sendBtn">发送消息</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pane">
+    <div class="pane-header">
+      <div>
+        <h3>实时轨迹</h3>
+        <div class="muted">计划、推理、工具调用与 critic 事件会流式显示，也会同步显示 subagent 统计。</div>
+      </div>
+      <div class="toolbar">
+        <span class="badge info" id="subagentActiveBadge">active 0</span>
+        <span class="badge warning" id="subagentTotalBadge">total 0</span>
+        <span class="badge success" id="subagentCompletedBadge">done 0</span>
+        <button class="secondary" id="clearTraceBtn">清空</button>
+      </div>
+    </div>
+    <div class="pane-body">
+      <div class="trace-stream" id="traceStream"></div>
+    </div>
+  </section>
+</section>
+    </main>
+  </div>
+  <script type="module" src="/static/chat.js"></script>
+</body>
+</html>

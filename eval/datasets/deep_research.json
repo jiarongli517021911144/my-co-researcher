@@ -1,0 +1,54 @@
+[
+  {
+    "task_id": "research_001",
+    "category": "deep_research",
+    "title": "AI 硬件对比",
+    "prompt": "调研并对比 Humane Ai Pin、Rabbit R1、Meta 智能眼镜的硬件参数、首发价格及主流媒体评测态度，输出 Markdown 对比表格。",
+    "ground_truth": {
+      "ai_pin_price": "$699",
+      "rabbit_r1_price": "$199",
+      "meta_glasses_price": "$299"
+    },
+    "eval_dimensions": {
+      "trajectory": {
+        "tool_usage": "是否拆解为多次 search + fetch",
+        "reasoning": "信息不完备时是否补充搜索"
+      },
+      "response": {
+        "format_compliance": "是否为 Markdown 表格",
+        "factual_accuracy": "价格/参数与 ground_truth 一致性",
+        "completeness": "是否覆盖所有产品的所有维度"
+      },
+      "efficiency": {
+        "efficiency": "总 token / API 次数 / wall time 代理指标"
+      }
+    },
+    "mock_output": "| Product | Launch Price | Notes |\n|---|---:|---|\n| Humane Ai Pin | $699 | Expensive, ambitious |\n| Rabbit R1 | $199 | Lower-cost companion |\n| Meta Smart Glasses | $299 | Better ecosystem fit |\n\nRecommendation: prioritize real-world ecosystem and scenario fit rather than peak novelty.",
+    "mock_trace": "search official specs -> fetch pricing pages -> compare reviews -> output markdown table",
+    "standard_trace": "search official specs -> fetch pricing pages -> compare reviews -> output markdown table"
+  },
+  {
+    "task_id": "research_002",
+    "category": "deep_research",
+    "title": "LLM 框架调研",
+    "prompt": "调研 LangGraph、AutoGen 和 CrewAI 三个框架的优缺点，给出面向状态化工作流的推荐。",
+    "ground_truth": "LangGraph 更适合需要明确状态管理的工作流",
+    "eval_dimensions": {
+      "trajectory": {
+        "tool_usage": "是否使用文档和示例进行比较",
+        "reasoning": "是否区分状态管理与多代理编排"
+      },
+      "response": {
+        "format_compliance": "是否给出可读的对比结构",
+        "factual_accuracy": "结论是否与 ground_truth 对齐",
+        "completeness": "是否覆盖三者优缺点"
+      },
+      "efficiency": {
+        "efficiency": "是否避免冗余搜索"
+      }
+    },
+    "mock_output": "- LangGraph: stateful workflow control is explicit.\n- AutoGen: flexible multi-agent collaboration, but control can drift.\n- CrewAI: easier orchestration, lighter setup, less explicit state handling.\n\n结论：LangGraph 更适合需要明确状态管理的工作流。",
+    "mock_trace": "read docs -> compare architecture -> summarize tradeoffs",
+    "standard_trace": "read docs -> compare architecture -> summarize tradeoffs"
+  }
+]

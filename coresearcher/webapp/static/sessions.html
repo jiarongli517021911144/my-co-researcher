@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>coresearcher · 会话浏览</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="theme-editorial page-sessions">
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="brand">
+        <div class="brand-mark">c</div>
+        <div class="brand-copy">
+          <div class="brand-kicker">Editorial Research Desk</div>
+          <h1>coresearcher</h1>
+          <p>研究员工作台 · 多页观察界面</p>
+        </div>
+      </div>
+      <div class="nav-section-title">模块导航</div>
+      <nav class="nav-list">
+        <a class="nav-link" href="/" data-nav="dashboard"><span class="nav-icon">✨</span><span>概览</span></a>
+<a class="nav-link" href="/chat" data-nav="chat"><span class="nav-icon">💬</span><span>对话</span></a>
+<a class="nav-link" href="/workspace" data-nav="workspace"><span class="nav-icon">🗂️</span><span>工作区</span></a>
+<a class="nav-link is-active" href="/sessions" data-nav="sessions"><span class="nav-icon">🧵</span><span>会话</span></a>
+<a class="nav-link" href="/memory" data-nav="memory"><span class="nav-icon">🧠</span><span>记忆</span></a>
+<a class="nav-link" href="/config" data-nav="config"><span class="nav-icon">⚙️</span><span>配置</span></a>
+      </nav>
+      <div class="nav-section-title">当前环境</div>
+      <div class="sidebar-meta">
+        <div><strong>Workspace</strong></div>
+        <div data-shell-workspace>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Memory</strong></div>
+        <div data-shell-memory>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Provider</strong></div>
+        <div data-shell-provider>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Channels</strong></div>
+        <div data-shell-channels>loading...</div>
+      </div>
+    </aside>
+    <main class="app-main">
+      <header class="page-header">
+        <div class="page-title">
+          <div class="page-eyebrow">SESSION LEDGER</div>
+          <h2>会话浏览</h2>
+          <p>把 session 列表和消息时间线拆成两栏，更适合检查窗口裁切后的历史、last_consolidated 与消息总量。</p>
+        </div>
+        <div class="page-actions">
+          <span class="page-stamp">Field Notes</span>
+          <a class="badge info" href="/">概览</a>
+        </div>
+      </header>
+      <section class="page-grid sessions-grid">
+  <aside class="pane">
+    <div class="pane-header">
+      <h3>所有会话</h3>
+      <button class="secondary" id="refreshSessionsBtn">刷新</button>
+    </div>
+    <div class="pane-body stack">
+      <input id="sessionsFilterInput" placeholder="筛选 session id" />
+      <div class="list" id="sessionsList"></div>
+    </div>
+  </aside>
+
+  <section class="pane">
+    <div class="pane-header">
+      <div>
+        <h3 id="sessionDetailTitle">会话详情</h3>
+        <div class="muted" id="sessionDetailMeta">选择左侧会话查看时间线。</div>
+      </div>
+    </div>
+    <div class="pane-body stack">
+      <div class="kv-grid" id="sessionStats"></div>
+      <div class="timeline" id="sessionMessages"></div>
+    </div>
+  </section>
+</section>
+    </main>
+  </div>
+  <script type="module" src="/static/sessions.js"></script>
+</body>
+</html>

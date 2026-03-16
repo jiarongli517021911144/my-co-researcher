@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>coresearcher · 概览</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body class="theme-editorial page-dashboard">
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="brand">
+        <div class="brand-mark">c</div>
+        <div class="brand-copy">
+          <div class="brand-kicker">Editorial Research Desk</div>
+          <h1>coresearcher</h1>
+          <p>研究员工作台 · 多页观察界面</p>
+        </div>
+      </div>
+      <div class="nav-section-title">模块导航</div>
+      <nav class="nav-list">
+        <a class="nav-link is-active" href="/" data-nav="dashboard"><span class="nav-icon">✨</span><span>概览</span></a>
+<a class="nav-link" href="/chat" data-nav="chat"><span class="nav-icon">💬</span><span>对话</span></a>
+<a class="nav-link" href="/workspace" data-nav="workspace"><span class="nav-icon">🗂️</span><span>工作区</span></a>
+<a class="nav-link" href="/sessions" data-nav="sessions"><span class="nav-icon">🧵</span><span>会话</span></a>
+<a class="nav-link" href="/memory" data-nav="memory"><span class="nav-icon">🧠</span><span>记忆</span></a>
+<a class="nav-link" href="/config" data-nav="config"><span class="nav-icon">⚙️</span><span>配置</span></a>
+      </nav>
+      <div class="nav-section-title">当前环境</div>
+      <div class="sidebar-meta">
+        <div><strong>Workspace</strong></div>
+        <div data-shell-workspace>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Memory</strong></div>
+        <div data-shell-memory>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Provider</strong></div>
+        <div data-shell-provider>loading...</div>
+        <div style="height: 10px"></div>
+        <div><strong>Channels</strong></div>
+        <div data-shell-channels>loading...</div>
+      </div>
+    </aside>
+    <main class="app-main">
+      <header class="page-header">
+        <div class="page-title">
+          <div class="page-eyebrow">RESEARCH BRIEFING</div>
+          <h2>概览</h2>
+          <p>把运行状态、最近会话、记忆文件和定时任务拆成清晰的信息卡片，作为进入其他模块的入口。</p>
+        </div>
+        <div class="page-actions">
+          <span class="page-stamp">Field Notes</span>
+          <a class="badge info" href="/">概览</a>
+        </div>
+      </header>
+      <section class="stack">
+  <div class="hero">
+    <h3>一个更清晰的 coresearcher 前端</h3>
+    <p>现在按模块拆成多页：对话、工作区、会话、记忆、配置各自独立，信息密度更高，但阅读负担更低。</p>
+    <div class="hero-grid">
+      <div class="hero-stat"><span class="k">Workspace 文件</span><span class="v" id="statFiles">-</span></div>
+      <div class="hero-stat"><span class="k">会话数量</span><span class="v" id="statSessions">-</span></div>
+      <div class="hero-stat"><span class="k">日记忆文件</span><span class="v" id="statMemories">-</span></div>
+      <div class="hero-stat"><span class="k">Cron 任务</span><span class="v" id="statCron">-</span></div>
+    </div>
+  </div>
+
+  <div class="grid cols-2">
+    <article class="card">
+      <div class="card-top"><h3>最近会话</h3><a class="badge" href="/sessions">查看全部</a></div>
+      <div class="list" id="recentSessions"></div>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>最近日记忆</h3><a class="badge" href="/memory">打开记忆页</a></div>
+      <div class="list" id="recentMemory"></div>
+    </article>
+  </div>
+
+  <div class="grid cols-2">
+    <article class="card">
+      <div class="card-top"><h3>最近文件</h3><a class="badge" href="/workspace">工作区</a></div>
+      <div class="list" id="recentFiles"></div>
+    </article>
+    <article class="card">
+      <div class="card-top"><h3>Cron 任务</h3><a class="badge" href="/config">配置页</a></div>
+      <div class="list" id="cronJobs"></div>
+    </article>
+  </div>
+</section>
+    </main>
+  </div>
+  <script type="module" src="/static/dashboard.js"></script>
+</body>
+</html>

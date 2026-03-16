@@ -1,0 +1,48 @@
+[
+  {
+    "task_id": "interactive_001",
+    "category": "dynamic_interaction",
+    "title": "多轮澄清任务",
+    "prompt": "用户需求不完整，需要先澄清预算和交付时间，再继续执行。",
+    "ground_truth": "先澄清关键约束，再继续执行",
+    "eval_dimensions": {
+      "trajectory": {
+        "reasoning": "是否先问关键澄清问题",
+        "interaction": "是否识别到当前信息不足"
+      },
+      "response": {
+        "completeness": "是否覆盖预算与交付时间两个约束",
+        "hallucination_control": "是否避免直接编造方案"
+      },
+      "efficiency": {
+        "efficiency": "是否用最少轮次完成澄清"
+      }
+    },
+    "mock_output": "我先确认两个关键约束：预算范围和交付时间。确认后我再给出完整方案。",
+    "mock_trace": "ask clarification -> wait -> proceed",
+    "standard_trace": "ask clarification -> wait -> proceed"
+  },
+  {
+    "task_id": "interactive_002",
+    "category": "dynamic_interaction",
+    "title": "工具故障恢复",
+    "prompt": "搜索工具失败后，应自动缩小查询范围，并改用 fetch 官方页面继续完成任务。",
+    "ground_truth": "缩小查询范围并尝试替代路径",
+    "eval_dimensions": {
+      "trajectory": {
+        "tool_usage": "失败后是否切换替代工具",
+        "recovery": "是否从失败中恢复"
+      },
+      "response": {
+        "completeness": "是否说明恢复路径",
+        "source_citation": "是否提到官方页面来源"
+      },
+      "efficiency": {
+        "efficiency": "是否减少无效动作"
+      }
+    },
+    "mock_output": "搜索超时后，我缩小了查询范围，并改为直接抓取官方页面继续完成任务，最终基于官方信息完成了输出。",
+    "mock_trace": "search timeout -> narrower query -> fetch official page",
+    "standard_trace": "search timeout -> narrower query -> fetch official page"
+  }
+]

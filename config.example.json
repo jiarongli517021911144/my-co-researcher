@@ -1,0 +1,64 @@
+{
+  "providers": {
+    "default": "mock",
+    "default_model": "mock/default",
+    "mock": {
+      "enabled": true,
+      "model": "mock/default"
+    },
+    "openai": {
+      "enabled": false,
+      "model": "gpt-4o-mini",
+      "api_key": "YOUR_OPENAI_API_KEY"
+    }
+  },
+  "channels": {
+    "cli": {
+      "enabled": true
+    },
+    "feishu": {
+      "enabled": false,
+      "app_id": null,
+      "app_secret": null,
+      "verification_token": null,
+      "encrypt_key": null
+    },
+    "qq": {
+      "enabled": false,
+      "app_id": null,
+      "secret": null,
+      "token": null,
+      "sandbox": true
+    }
+  },
+  "tools": {
+    "restrict_to_workspace": true,
+    "allowed_dir": "~/.coresearcher/workspace",
+    "exec": {
+      "timeout": 60,
+      "block_dangerous": true
+    },
+    "web": {
+      "search": {
+        "api_key": null,
+        "base_url": "https://api.search.brave.com/res/v1/web/search",
+        "max_results": 5
+      },
+      "fetch_timeout": 20
+    }
+  },
+  "memory": {
+    "directory": "~/.coresearcher/workspace/memory",
+    "session_dir": "~/.coresearcher/sessions",
+    "recent_days": 1,
+    "vector_top_k": 5
+  },
+  "cron": {
+    "enabled": true,
+    "heartbeat_minutes": 30,
+    "store_path": "~/.coresearcher/cron_jobs.json"
+  },
+  "workspace": {
+    "path": "~/.coresearcher/workspace"
+  }
+}
