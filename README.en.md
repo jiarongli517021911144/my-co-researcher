@@ -6,6 +6,8 @@
 
 It is designed for people who want a runnable assistant runtime instead of a single chat wrapper.
 
+The runtime is organized around an explicit agent loop: context is assembled, tools are selected, actions are executed, and results are written back to the workspace for the next turn.
+
 ![Frontend overview](image/overview.png)
 
 ## Features
@@ -73,7 +75,7 @@ These integrations are part of the public project, but they require platform cre
 
 ```text
 coresearcher/              Core package
-providers/            Provider compatibility layer reused by coresearcher
+providers/                 Provider compatibility layer reused by coresearcher
 demos/                Runnable demos
 eval/datasets/        Public evaluation datasets
 config.example.json   Minimal configuration template
